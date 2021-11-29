@@ -60,6 +60,7 @@ async def softmux(client, message):
                     ), 
                 video = os.path.join(Config.DOWNLOAD_DIR, final_filename),
                 caption = final_filename
+                thumb = 'AgACAgEAAxkBAAIF8WGk3EijDR3GHGi3F-beNWmA_DA9AALNqTEbu8YJRRB692pFacTHAQADAgADcwADIgQ'
                 )
         text = 'File Successfully Uploaded!\nTotal Time taken : {} seconds'.format(round(time.time()-start_time))
         await sent_msg.edit(text)
