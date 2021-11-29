@@ -19,6 +19,8 @@ check_user = filters.create(_check_user)
 
 this_is_global_1=''
 this_is_global_2=''
+this_is_global_3=''
+this_is_global_caht_id='
 
 @Client.on_message(filters.command('softmux') & check_user & filters.private)
 async def softmux(client, message):
@@ -66,24 +68,24 @@ async def softmux(client, message):
         await client.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
       
         
-    global this_is_global_1
-    this_is_global_1=path+og_sub_filename
-    global this_is_global_2
-    this_is_global_2=path+og_vid_filename
-    global this_is_global_3
-    this_is_global_3=path+final_filename
-    global this_is_global_caht_id
-    this_is_global_caht_id=chat_id
+#     global this_is_global_1
+#     this_is_global_1=path+og_sub_filename
+#     global this_is_global_2
+#     this_is_global_2=path+og_vid_filename
+#     global this_is_global_3
+#     this_is_global_3=path+final_filename
+#     global this_is_global_caht_id
+#     this_is_global_caht_id=chat_id
 
-#     path = Config.DOWNLOAD_DIR+'/'
-#     os.remove(path+og_sub_filename)
-#     os.remove(path+og_vid_filename)
-#     try :
-#         os.remove(path+final_filename)
-#     except :
-#         pass
+    path = Config.DOWNLOAD_DIR+'/'
+    os.remove(path+og_sub_filename)
+    os.remove(path+og_vid_filename)
+    try :
+        os.remove(path+final_filename)
+    except :
+        pass
 
-#     db.erase(chat_id)
+    db.erase(chat_id)
 
 
 @Client.on_message(filters.command('hardmux') & check_user & filters.private)
@@ -131,32 +133,23 @@ async def hardmux(client, message):
         print(e)
         await client.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
     
-    global this_is_global_1
-    this_is_global_1=path+og_sub_filename
-    global this_is_global_2
-    this_is_global_2=path+og_vid_filename
-    global this_is_global_3
-    this_is_global_3=path+final_filename
-    global this_is_global_caht_id
-    this_is_global_caht_id=chat_id
+#     global this_is_global_1
+#     this_is_global_1=path+og_sub_filename
+#     global this_is_global_2
+#     this_is_global_2=path+og_vid_filename
+#     global this_is_global_3
+#     this_is_global_3=path+final_filename
+#     global this_is_global_caht_id
+#     this_is_global_caht_id=chat_id
     
-#     path = Config.DOWNLOAD_DIR+'/'
-#     os.remove(path+og_sub_filename)
-#     os.remove(path+og_vid_filename)
-#     try :
-#         os.remove(path+final_filename)
-#     except :
-#         pass
-#     db.erase(chat_id)
-
-    
-@Client.on_message(filters.command('delmux') & check_user & filters.private)
-async def delmux(client, message):
     path = Config.DOWNLOAD_DIR+'/'
-    os.remove(this_is_global_1)
-    os.remove(this_is_global_2)
+    os.remove(path+og_sub_filename)
+    os.remove(path+og_vid_filename)
     try :
-        os.remove(this_is_global_3)
+        os.remove(path+final_filename)
     except :
         pass
-    db.erase(this_is_global_caht_id)
+    db.erase(chat_id)
+
+    
+
