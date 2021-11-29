@@ -45,7 +45,7 @@ async def softmux(client, message):
 
     start_time = time.time()
     try:
-        await client.send_document(
+        await client.send_video(
                 chat_id, 
                 progress = progress_bar, 
                 progress_args = (
@@ -53,7 +53,7 @@ async def softmux(client, message):
                     sent_msg,
                     start_time
                     ), 
-                document = os.path.join(Config.DOWNLOAD_DIR, final_filename),
+                video = os.path.join(Config.DOWNLOAD_DIR, final_filename),
                 caption = final_filename
                 )
         text = 'File Successfully Uploaded!\nTotal Time taken : {} seconds'.format(round(time.time()-start_time))
